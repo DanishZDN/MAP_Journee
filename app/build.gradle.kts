@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1"
 }
 
 android {
@@ -16,6 +17,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        
+        manifestPlaceholders["MAPS_API_KEY"] = "AIzaSyCpBb_iKXYfUkxfNS-BjyqHncsbn0pewqA"
     }
 
     buildTypes {
@@ -39,11 +42,12 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
-
+// i love coffee
 dependencies {
-
+    // Existing dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -52,6 +56,32 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation("androidx.compose.ui:ui:1.5.3")
+    implementation("androidx.compose.material:material:1.5.3")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.5.3")
+    implementation("androidx.navigation:navigation-compose:2.7.5")
+    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("androidx.compose.material:material-icons-extended:1.5.3")
+
+    // Google Maps
+    implementation("com.google.maps.android:maps-compose:2.11.4")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
+    // Calendar
+    implementation("com.kizitonwose.calendar:compose:2.4.0")
+
+    // Permissions
+    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
+
+    // Image Picker
+    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("androidx.activity:activity-ktx:1.8.1")
+
+    // Window size utils for tablet support
+    implementation("androidx.compose.material3:material3-window-size-class:1.1.2")
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -59,11 +89,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation ("androidx.compose.ui:ui:1.5.3")
-    implementation ("androidx.compose.material:material:1.5.3")
-    implementation ("androidx.compose.ui:ui-tooling-preview:1.5.3")
-    implementation ("androidx.navigation:navigation-compose:2.7.5")
-    implementation("io.coil-kt:coil-compose:2.4.0")
-    implementation ("androidx.compose.material:material-icons-extended:1.5.3")
-
 }
