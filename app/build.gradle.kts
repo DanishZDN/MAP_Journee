@@ -63,16 +63,14 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("androidx.compose.material:material-icons-extended:1.5.3")
 
-    // Google Maps
+    // Maps and Location
     implementation("com.google.maps.android:maps-compose:2.11.4")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
 
     // Calendar
     implementation("com.kizitonwose.calendar:compose:2.4.0")
-
-    // Permissions
-    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
 
     // Image Picker
     implementation("io.coil-kt:coil-compose:2.4.0")
