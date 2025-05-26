@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center"
+        android:text="Journée"
+        android:textSize="36sp"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_top_purple"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/dot_selected" android:layout_margin="4dp"/>
+            <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/dot_unselected" android:layout_margin="4dp"/>
+            <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/dot_unselected" android:layout_margin="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Journee"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's start a life with a memorable Journee!"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/continueBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:backgroundTint="@android:color/white"
+            android:textColor="@color/purple"
+            android:layout_marginTop="30dp"/>
+    </LinearLayout>
+</LinearLayout>
