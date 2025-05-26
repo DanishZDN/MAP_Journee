@@ -80,6 +80,12 @@ dependencies {
     // Window size utils for tablet support
     implementation("androidx.compose.material3:material3-window-size-class:1.1.2")
 
+    // XML Layout Support
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+
     // Testing dependencies
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
