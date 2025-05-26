@@ -34,8 +34,9 @@ fun AtlasScreen(
     
     var showPermissionDialog by remember { mutableStateOf(false) }
     
+    val jakarta = LatLng(-6.2088, 106.8456)
     val cameraPositionState = rememberCameraPositionState {
-        position = CameraPosition.fromLatLngZoom(LatLng(0.0, 0.0), 2f)
+        position = CameraPosition.fromLatLngZoom(jakarta, 12f)
     }
 
     Scaffold(
@@ -78,7 +79,14 @@ fun AtlasScreen(
                 modifier = Modifier.fillMaxSize(),
                 cameraPositionState = cameraPositionState,
                 properties = MapProperties(
-                    isMyLocationEnabled = locationPermissionState.hasPermission
+                    isMyLocationEnabled = locationPermissionState.hasPermission,
+                    mapType = MapType.NORMAL
+                ),
+                uiSettings = MapUiSettings(
+                    zoomControlsEnabled = true,
+                    myLocationButtonEnabled = true,
+                    mapToolbarEnabled = true,
+                    compassEnabled = true
                 )
             ) {
                 journalMarkers.forEach { marker ->
