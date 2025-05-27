@@ -3,11 +3,8 @@ package com.android.example.mobileapp_journeeg9.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.*
+import androidx.compose.material3.DividerDefaults.color
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
@@ -15,42 +12,32 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
+// === 🎨 MOCKUP COLORS ===
+val Purple = color(0xFF3C2A87)
+val DarkText = color(0xFF002B36)
+val Gray = color(0xFF888888)
+val White = color(0xFFFFFFFF)
+val BackgroundLight = color(0xFFFFFFFF)
+val BackgroundDark = color(0xFF121212)
+
+// === 🧱 LIGHT THEME ===
 private val LightColorScheme = lightColorScheme(
-    primary = PrimaryLight,
-    onPrimary = OnPrimaryLight,
-    primaryContainer = PrimaryContainerLight,
-    onPrimaryContainer = OnPrimaryContainerLight,
-    secondary = SecondaryLight,
-    onSecondary = OnSecondaryLight,
-    secondaryContainer = SecondaryContainerLight,
-    onSecondaryContainer = OnSecondaryContainerLight,
-    tertiary = TertiaryLight,
-    onTertiary = OnTertiaryLight,
-    tertiaryContainer = TertiaryContainerLight,
-    onTertiaryContainer = OnTertiaryContainerLight,
+    primary = Purple,
+    onPrimary = White,
     background = BackgroundLight,
-    onBackground = OnBackgroundLight,
-    surface = SurfaceLight,
-    onSurface = OnSurfaceLight
+    onBackground = DarkText,
+    surface = White,
+    onSurface = DarkText
 )
 
+// === 🌚 DARK THEME ===
 private val DarkColorScheme = darkColorScheme(
-    primary = PrimaryDark,
-    onPrimary = OnPrimaryDark,
-    primaryContainer = PrimaryContainerDark,
-    onPrimaryContainer = OnPrimaryContainerDark,
-    secondary = SecondaryDark,
-    onSecondary = OnSecondaryDark,
-    secondaryContainer = SecondaryContainerDark,
-    onSecondaryContainer = OnSecondaryContainerDark,
-    tertiary = TertiaryDark,
-    onTertiary = OnTertiaryDark,
-    tertiaryContainer = TertiaryContainerDark,
-    onTertiaryContainer = OnTertiaryContainerDark,
+    primary = Purple,
+    onPrimary = White,
     background = BackgroundDark,
-    onBackground = OnBackgroundDark,
-    surface = SurfaceDark,
-    onSurface = OnSurfaceDark
+    onBackground = White,
+    surface = BackgroundDark,
+    onSurface = White
 )
 
 @Composable
@@ -68,6 +55,7 @@ fun MobileApp_JourneeG9Theme(
         else -> LightColorScheme
     }
 
+    // Apply status bar color
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -79,7 +67,7 @@ fun MobileApp_JourneeG9Theme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = Typography, // You can define custom fonts in Typography.kt
         content = content
     )
 }
