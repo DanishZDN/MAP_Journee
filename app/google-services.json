@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "483048470507",
+    "project_id": "journee-de8cc",
+    "storage_bucket": "journee-de8cc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483048470507:android:584db641d20f08adbf0bae",
+        "android_client_info": {
+          "package_name": "com.android.example.mobileapp_journeeg9"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPQOnn9FqOJm10FY2LfpGNKZHtyz-W-Fw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,8 @@
 plugins {
-    id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1"
+    id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -45,6 +46,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.common.ktx)
     val composeBomVersion = "2023.10.01"
     val accompanistVersion = "0.32.0"
 
@@ -94,4 +96,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
+    implementation("com.google.firebase:firebase-auth-ktx")
 }
